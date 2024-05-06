@@ -41,7 +41,55 @@
 // }
 // ).catch(()=> console.log("failed"))
 
-const p = Promise.resolve("execution is done"); 
-// let p = Promise.reject("execution is rejected");
+// const p = Promise.resolve("execution is done"); 
+// // let p = Promise.reject("execution is rejected");
 
-p.then((val)=> console.log(val));
+// p.then((val)=> console.log(val));
+
+// function asyncTask(){
+//   return Promise.resolve();
+// }
+// console.log("first");
+// asyncTask().then(()=>{
+//   console.log(name);
+// })
+
+// const name = "jus"
+
+//promise chain 
+
+// const p = Promise.resolve("done");
+// p.then((val) => {
+//   console.log(val);
+//   return "done2"
+// }).then((val)=>{
+//   console.log(val);
+//   return "done3"
+// }).then((val)=>{
+//   console.log(val);
+//   return "done4"
+// }).then((val) => console.log(val))
+// .catch((val) => console.log(val))
+
+// console.log("hello world");
+
+// const ps = Promise.reject("failed"); 
+// ps.then((val)=>{
+//   console.log(val);
+//   return "done2"
+// }).then((val)=>{
+//   console.log(val);
+//   return "done3"
+// }).catch((val)=> console.log(val))
+
+const makeApiCall = (time)=>{
+  return new Promise((resolve, reject)=>{
+     setTimeout(()=>{
+      resolve("This API executed in: " + time)
+     }, time)
+  })
+};
+
+makeApiCall(1000).then((val) => console.log(val));
+
+let multiApiCall = [makeApiCall(1000), makeApiCall(2000), makeApiCall(3000)]
