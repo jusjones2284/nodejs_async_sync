@@ -1,0 +1,11 @@
+{
+  "name": "nodejs_async_sync",
+  "version": "1.0.0",
+  "description": "This is nodejs async and sync",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JusDev",
+  "license": "ISC"
+}
